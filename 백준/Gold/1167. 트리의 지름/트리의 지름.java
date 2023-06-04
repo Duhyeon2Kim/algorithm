@@ -54,6 +54,7 @@ public class Main {
                 if(visit[nodeInfo[0]]) continue;
                 visit[nodeInfo[0]] = true;
                 dfs(nodeInfo[0],totalDistance+nodeInfo[1]);
-        }
+                visit[nodeInfo[0]] = false;
+            }
     }
 }
