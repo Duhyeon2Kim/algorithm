@@ -8,12 +8,10 @@ class Solution {
         Arrays.sort(peopleArr, Collections.reverseOrder());
         int right = people.length-1;
         int answer = 0;
-        for(int i=0; i<people.length; i++) {
-            if(i>right) break;
+        for(int i=0; i<=right; i++) {
             int sum = peopleArr[i]+peopleArr[right];
             if(sum <= limit) right--;
             answer++;
-            
         }
         
         
