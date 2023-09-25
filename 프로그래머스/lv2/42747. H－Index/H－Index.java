@@ -1,20 +1,13 @@
-import java.util.*;
+import java.util.Arrays;
+
 class Solution {
     public int solution(int[] citations) {
-        Arrays.sort(citations);
         int answer = 0;
-        boolean flag = true;
-        
-        while(flag) {
-            flag = false;
-            int count = 0;
-            for(int x: citations) {
-                if(x>=answer) count++;
-                if(count>=answer) {flag = true; answer++; break;}
-            }
-            if(!flag) answer--;
+        Arrays.sort(citations);
+        for(int i=0; i<citations.length; i++){
+            int smaller = Math.min(citations[i], citations.length-i);
+            answer = Math.max(answer, smaller);
         }
-        
         return answer;
     }
 }
